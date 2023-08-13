@@ -14,6 +14,7 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   const getPosts = async () => {
+    console.log('wa');
     const { data: posts } = await axios.get(urlBaseServer + "/posts");
     setPosts([...posts]);
   };
@@ -25,7 +26,7 @@ function App() {
   };
 
   const like = async (id) => {
-    await axios.put(urlBaseServer + `/posts/like/${id}`);
+    await axios.put(urlBaseServer + `/posts/likes/${id}`);
     getPosts();
   };
 
